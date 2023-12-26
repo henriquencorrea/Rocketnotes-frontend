@@ -12,7 +12,7 @@ export const Container = styled.button`
   border-radius: 10px;
   font-weight: 500;
 
-  &disabled {
+  &:disabled {
     opacity: 0.5;
 
   }
