@@ -60,5 +60,16 @@ grid-area: content;
 
 export const NewNote = styled.button`
 grid-area: newnote;
+background: ${({ theme }) => theme.COLORS.ORANGE};
+border: none;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+svg {
+  margin-right: 8px;
+
+}
 
 `;
