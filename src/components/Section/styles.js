@@ -16,6 +16,4 @@ export const Container = styled.section`
     font-weight: 400;
   }
 
-
-
 `; 
