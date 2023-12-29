@@ -1,13 +1,22 @@
 import { Header } from '../../components/Header'
-import { Container } from './styles';
+import { Input } from '../../components/Input'
+import { Container, Form } from './styles'
 
 export function New() {
-  return(
+  return (
     <Container>
-      <Header>
-        
-      </Header>
+      <Header />
+
+      <main>
+        <Form>
+          <header>
+            <h1>Criar Nota</h1>
+            <a href="/">voltar</a>
+          </header>
+
+          <Input placeholder="Título" />
+        </Form>
+      </main>
     </Container>
   )
 }
-
