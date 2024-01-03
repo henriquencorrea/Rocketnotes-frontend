@@ -19,6 +19,7 @@ background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
 export const Brand = styled.div`
 grid-area: brand;
+display: flex;
 justify-content: center;
 align-items: center;
 
