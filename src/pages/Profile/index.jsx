@@ -7,6 +7,7 @@ import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi';
 
 import { useAuth } from '../../hooks/auth.jsx'
 import { api } from '../../services/api';
+import { motion } from 'framer-motion';
 
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
@@ -52,67 +53,76 @@ export function Profile(){
   }
 
   return (
-    <Container>
-      <header>
-        <button type="button" onClick={handleBack}>
-          <FiArrowLeft />
-        </button>
-  
-      </header>
 
-      <Form>
+    <motion.div
+      initial={{opacity:0}}
+      animate={{opacity: 1, transition: {duration: 0.5}}}
+      exit={{opacity: 0}}
+    >
 
-        <Avatar>
-          <img
-            src={avatar}
-            alt="Foto do usuário"
+      <Container>
+        <header>
+          <button type="button" onClick={handleBack}>
+            <FiArrowLeft />
+          </button>
+    
+        </header>
+
+        <Form>
+
+          <Avatar>
+            <img
+              src={avatar}
+              alt="Foto do usuário"
+            />
+
+            <label htmlFor="avatar">
+            <FiCamera />
+
+            <input
+              id="avatar" 
+              type="file"
+              onChange={handleChangeAvatar}
+              
+            />
+            </label>
+          </Avatar>
+          
+          <Input
+            placeholder="Nome"
+            type="text"
+            icon={FiUser}
+            value={name}
+            onChange={e => setName(e.target.value)}
           />
 
-          <label htmlFor="avatar">
-          <FiCamera />
-
-          <input
-            id="avatar" 
-            type="file"
-            onChange={handleChangeAvatar}
-            
+          <Input
+            placeholder="E-mail"
+            type="text"
+            icon={FiMail}
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
-          </label>
-        </Avatar>
-        
-        <Input
-          placeholder="Nome"
-          type="text"
-          icon={FiUser}
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
 
-        <Input
-          placeholder="E-mail"
-          type="text"
-          icon={FiMail}
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
+          <Input
+            placeholder="Senha atual"
+            type="password"
+            icon={FiLock}
+            onChange={e => setPasswordOld(e.target.value)}
+          />
 
-        <Input
-          placeholder="Senha atual"
-          type="password"
-          icon={FiLock}
-          onChange={e => setPasswordOld(e.target.value)}
-        />
+          <Input
+            placeholder="Nova senha"
+            type="password"
+            icon={FiLock}
+            onChange={e => setPasswordNew(e.target.value)}
+          />
 
-        <Input
-          placeholder="Nova senha"
-          type="password"
-          icon={FiLock}
-          onChange={e => setPasswordNew(e.target.value)}
-        />
+          <Button title="Salvar" onClick={handleUpdate} />
+        </Form>
+      </Container>
 
-        <Button title="Salvar" onClick={handleUpdate} />
-      </Form>
-    </Container>
+    </motion.div>
   );
 
 }

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImg from '../../assets/background.png'
+import backgroundImg from '../../assets/background.jpg'
 
 export const Container = styled.div`
   height: 100vh;
@@ -47,6 +47,11 @@ export const Background = styled.div`
   flex: 1;
   background: url(${backgroundImg}) no-repeat center center;
   background-size: cover;
+
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 
 
 `;

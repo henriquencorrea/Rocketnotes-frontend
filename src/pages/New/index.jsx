@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import { ButtonText } from '../../components/ButtonText';
 import { Textarea } from '../../components/Textarea';
@@ -9,8 +9,10 @@ import { Section } from '../../components/Section';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
-
 import { Container, Form } from './styles';
+
+import { motion } from 'framer-motion';
+
 
 export function New() {
   const [title, setTitle] = useState("");
@@ -73,83 +75,90 @@ export function New() {
   }
 
   return (
-    <Container>
-      <Header />
 
-      <main>
-        <Form>
-          <header>
+    <motion.div
+      initial={{opacity:0}}
+      animate={{opacity: 1, transition: {duration: 0.5}}}
+      exit={{opacity: 0 }}    
+    >
+      <Container>
+        <Header />
 
-            <h1>Criar Nota</h1>
+        <main>
+          <Form>
+            <header>
 
-            <ButtonText
-             title="Voltar"
-             onClick={handleBack} /> 
-            
-          </header>
+              <h1>Criar Nota</h1>
 
-          <Input
-             placeholder="Título"
-             onChange={e => setTitle(e.target.value)}
-          />
+              <ButtonText
+              title="Voltar"
+              onClick={handleBack} /> 
+              
+            </header>
 
-          <Textarea
-            placeholder="Observações"
-            onChange={e => setDescription(e.target.value)}
-
-          />
-
-          <Section title="Links úteis">
-            {
-              links.map((link, index) => (
-                <NoteItem
-                  key={String(index)}
-                  value={link}
-                  onClick={() => handleRemoveLink(link)}
-                />
-              ))
-            }
-            <NoteItem
-              isNew
-              placeholder="Novo link"
-              value={newLink}
-              onChange={e => setNewLink(e.target.value)}
-              onClick={handleAddLink}
+            <Input
+              placeholder="Título"
+              onChange={e => setTitle(e.target.value)}
             />
-          </Section>
 
-          <Section title="Marcadores">
-            <div className='tags'>
+            <Textarea
+              placeholder="Observações"
+              onChange={e => setDescription(e.target.value)}
 
+            />
+
+            <Section title="Links úteis">
               {
-                tags.map((tag, index) => (
+                links.map((link, index) => (
                   <NoteItem
                     key={String(index)}
-                    value={tag}
-                    onClick={() => handleRemoveTag(tag)}
+                    value={link}
+                    onClick={() => handleRemoveLink(link)}
                   />
-
                 ))
+              }
+              <NoteItem
+                isNew
+                placeholder="Novo link"
+                value={newLink}
+                onChange={e => setNewLink(e.target.value)}
+                onClick={handleAddLink}
+              />
+            </Section>
+
+            <Section title="Marcadores">
+              <div className='tags'>
+
+                {
+                  tags.map((tag, index) => (
+                    <NoteItem
+                      key={String(index)}
+                      value={tag}
+                      onClick={() => handleRemoveTag(tag)}
+                    />
+                  ))
                 }
 
-              <NoteItem 
-                isNew 
-                placeholder="Nova Tag"
-                onChange={e => setNewTag(e.target.value)}
-                value={newTag}
-                onClick={handleAddTag}
-              />
+                <NoteItem 
+                  isNew 
+                  placeholder="Nova Tag"
+                  onChange={e => setNewTag(e.target.value)}
+                  value={newTag}
+                  onClick={handleAddTag}
+                />
 
-            </div>
-          </Section>
+              </div>
+            </Section>
 
-          <Button 
-            title="Salvar"
-            onClick={handleNewNote}
-          />
-       
-        </Form>
-      </main>
-    </Container>
-  )
+            <Button 
+              title="Salvar"
+              onClick={handleNewNote}
+            />
+        
+          </Form>
+        </main>
+      </Container>
+      
+    </motion.div>
+  );
 }
