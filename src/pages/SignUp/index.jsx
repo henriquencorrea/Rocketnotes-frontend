@@ -76,7 +76,7 @@ export function SignUp() {
 
           <Button title="Cadastrar" onClick={handleSignUp} />
 
-          <Link to="/">oltar para o login</Link>
+          <Link to="/">Voltar para o login</Link>
         </Form>
       </Container>
     </motion.div>
