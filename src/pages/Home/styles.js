@@ -31,7 +31,7 @@ background-color:  ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
 > h1 {
   font-size: 24px;
-  color:  ${({ theme }) => theme.COLORS.ORANGE};
+  color:  ${({ theme }) => theme.COLORS.GREEN};
 }
 `;
 
@@ -65,7 +65,7 @@ overflow-y: auto;
 
 export const NewNote = styled(Link)`
 grid-area: newnote;
-background: ${({ theme }) => theme.COLORS.ORANGE};
+background: ${({ theme }) => theme.COLORS.GREEN};
 color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
 display: flex;

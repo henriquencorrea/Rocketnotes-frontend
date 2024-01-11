@@ -5,6 +5,8 @@ import { api } from '../../services/api';
 import { RiShutDownLine } from 'react-icons/ri'
 import { Container, Profile, Logout } from "./styles";
 
+
+
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
 export function Header() {
@@ -22,6 +24,7 @@ export function Header() {
 
 
     return(
+  
     <Container>
       <Profile to="/profile">
         <img src={avatarUrl} alt={user.name}/>
@@ -37,5 +40,6 @@ export function Header() {
         </Logout>
 
     </Container>
+    
   );
 }
