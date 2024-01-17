@@ -22,18 +22,18 @@
 ## 💬 About
 
   RocketNotes is a project developed by Rocketseat's Explorer course.
-  The objective is to create a simple system, using modern technologies such as React, Vite, React Router DOM, Styled Components and React Icons.
+  Our objective is to create a simple system using modern technologies such as React, Vite, React Router DOM, Styled Components, and React Icons.
 
-  Rocketnotes is a web application in which users can register and create notes on certain subjects in an organized way,
-  with the addition of title, description, links and tags for each note, in addition to editing the user's profile,
-  being able to change your avatar, name, email and password.
-  It is worth mentioning that this project is part of the Explorer trail/course offered by Rocketseat for anyone interested.
+  With RocketNotes, you can register and create notes on specific subjects in an organized manner.
+  You can add a title, description, links, and tags for each note, as well as edit your profile.
+  You can easily modify your avatar, name, email, and password.
+  I want to remind you that this project is part of the Explorer trail/course provided by Rocketseat for those who are interested.
 
 </br></br>  
   
 ## 🎨 Layout
 
-You can view the project layout via <a href="https://www.figma.com/file/Z8Bw89VSqMUA0A2wg8Y1tz/RocketNotes-(Copy)-(Copy)?type=design&node-id=0-1&mode=design&t=jaJXPOJ0fHW6qNAF-0" target="_blank">link</a>.
+You can easily view the project layout by clicking on the provided <a href="https://www.figma.com/file/Z8Bw89VSqMUA0A2wg8Y1tz/RocketNotes-(Copy)-(Copy)?type=design&node-id=0-1&mode=design&t=jaJXPOJ0fHW6qNAF-0" target="_blank">link</a>.
 
 <p align="center">
   <img width="850px" src=".github/Capa.jpg" />
